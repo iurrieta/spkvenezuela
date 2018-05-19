@@ -1,95 +1,165 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.landing')
 
-        <title>Laravel</title>
+@section('title')
+    SPK Venezuela
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('content')
+    <nav class="navbar navbar-default" role="navigation-demo" id="demo-navbar">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">SPK Venezuela</a>
+            </div>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navigation-example-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ url('/login') }}" class="btn btn-simple">Ingresar</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/register') }}" class="btn btn-simple">Registrar</a>
+                    </li>
+                    {{--<li>
+                        <a href="#" target="_blank" class="btn btn-simple"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" class="btn btn-simple"><i class="fa fa-facebook"></i></a>
+                    </li>--}}
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-->
+    </nav>
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+    <div class="wrapper">
+        <div class="landing-header" style="background-image: url({{ asset('img/paper_img/cat.jpg') }});">
+            <div class="container">
+                <div class="motto">
+                    <h1 class="title-uppercase">Example page</h1>
+                    <h3>Start designing your landing page here.</h3>
+                    <br />
+                    <a class="btn">Ingresar</a>
+                    <a class="btn">Registrar</a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <div class="main">
+            <div class="section text-center landing-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h2>Let's talk product</h2>
+                            <h5>This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+                            <br />
+                            <a href="#" class="btn btn-danger btn-fill">See Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section-light-brown landing-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 column">
+                            <h4>First Attribute</h4>
+                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <a class="btn btn-danger btn-simple" href="#">See more <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                        <div class="col-md-4 column">
+                            <h4>Second Attribute</h4>
+                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <a class="btn btn-danger btn-simple" href="#">See more <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                        <div class="col-md-4 column">
+                            <h4>Third Attribute</h4>
+                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <a class="btn btn-danger btn-simple" href="#">See more <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section-dark text-center landing-section">
+                <div class="container">
+                    <h2>Let's talk about us</h2>
+                    <div class="col-md-4">
+                        <div class="team-player">
+                            <img src="{{ asset('img/paper_img/chet_faker_2.jpg') }}" alt="Thumbnail Image" class="img-circle img-responsive">
+                            <h5>Chet Faker <br /><small class="text-muted">Music</small></h5>
+                            <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="team-player">
+                            <img src="{{ asset('img/paper_img/flume.jpg') }}" alt="Thumbnail Image" class="img-circle img-responsive">
+                            <h5>Flume <br /><small class="text-muted">Production</small></h5>
+                            <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="team-player">
+                            <img src="{{ asset('img/paper_img/banks.jpg') }}" alt="Thumbnail Image" class="img-circle img-circle img-responsive">
+                            <h5>Banks <br /><small class="text-muted">Music</small></h5>
+                            <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section landing-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h2 class="text-center">Keep in touch?</h2>
+                            <form class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                        <input class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                        <input class="form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                                <label>Message</label>
+                                <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                                <div class="row">
+                                    <div class="col-md-4 col-md-offset-4">
+                                        <button class="btn btn-danger btn-block btn-lg btn-fill">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-demo section-dark">
+        <div class="container">
+            <nav class="pull-left">
+                <ul>
+                    <li>
+                        <a href="{{ url('/login') }}">Ingresar</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/register') }}">Registrar</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright pull-right">
+                SPK Venezuela
+            </div>
+        </div>
+    </footer>
+@endsection
