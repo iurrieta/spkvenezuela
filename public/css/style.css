@@ -1,0 +1,31 @@
+.main-panel {
+    width: 100%;
+}
+.navbar-nav > li.active {
+    color: #ac2925;
+    border-bottom: 3px solid #ac2925;
+}
+.off-canvas-sidebar .nav li > a {
+     opacity: 1;
+}
+
+@media (max-width: 991px) {
+    .off-canvas-sidebar .nav > li > a {
+        margin: 0px 0px;
+        color: #66615B;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .off-canvas-sidebar .nav > li > a i {
+        line-height: 30px;
+    }
+    .footer .ic-social {
+        float: none!important;
+        text-align: center;
+    }
+    .nav-open .navbar .container {
+        left: 0;
+    }
+}

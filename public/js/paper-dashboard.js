@@ -62,30 +62,20 @@ pd = {
          if(!navbar_initialized){
             $off_canvas_sidebar = $('nav').find('.navbar-collapse').first().clone(true);
 
-            $sidebar = $('.sidebar');
-            sidebar_bg_color = $sidebar.data('background-color');
-            sidebar_active_color = $sidebar.data('active-color');
-
-            $logo = $sidebar.find('.logo').first();
-            logo_content = $logo[0].outerHTML;
+            $logo = '<div class="logo"><a href="#" class="simple-text">' + $('.navbar-brand').text() + '</a></div>';
+            logo_content = $logo;
 
             ul_content = '';
 
             // set the bg color and active color from the default sidebar to the off canvas sidebar;
-            $off_canvas_sidebar.attr('data-background-color',sidebar_bg_color);
-            $off_canvas_sidebar.attr('data-active-color',sidebar_active_color);
+            $off_canvas_sidebar.attr('data-background-color','white');
+            $off_canvas_sidebar.attr('data-active-color','danger');
 
             $off_canvas_sidebar.addClass('off-canvas-sidebar');
 
-            //add the content from the regular header to the right menu
-            $off_canvas_sidebar.children('ul').each(function(){
-                content_buff = $(this).html();
-                ul_content = ul_content + content_buff;
-            });
-
             // add the content from the sidebar to the right menu
-            content_buff = $sidebar.find('.nav').html();
-            ul_content = ul_content + '<li class="divider"></li>'+ content_buff;
+            content_buff = $('.navbar-collapse').find('.nav').html();
+            ul_content = content_buff;
 
             ul_content = '<ul class="nav navbar-nav">' + ul_content + '</ul>';
 
