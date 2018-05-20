@@ -16,9 +16,10 @@
     <link href="{{ asset('css/lib/ct-paper.css') }}" rel="stylesheet">
     <link href="{{ asset('css/lib/ct-dm.css') }}" rel="stylesheet">
     <link href="{{ asset('css/lib/ct-xpl.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     {{--Fonts and icons--}}
-    <link href="{{ asset('fonts/css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/themify-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('fonts/css/font-awesome.css') }}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>

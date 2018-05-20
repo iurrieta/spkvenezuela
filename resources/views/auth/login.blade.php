@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <nav class="navbar navbar-ct-transparent navbar-fixed-top" role="navigation-demo" id="register-navbar">
+    <nav class="navbar navbar-default">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -29,41 +29,41 @@
         </div><!-- /.container-->
     </nav>
 
-    <div class="wrapper">
-        <div class="register-background" style="background-image: url({{ asset('img/paper_img/landscape.jpg') }});">
-            <div class="filter-black"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 ">
-                        <div class="register-card">
-                            <form class="register-form" method="POST" action="{{ route('login') }}">
-                                {{ csrf_field() }}
+    <div class="register-background">
+        <div class="container">
+            <div align="center">
+                <h2>Ingrese sus datos</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 ">
+                    <div class="register-card card-app-danger">
+                        <form class="register-form" method="POST" action="{{ route('login') }}">
+                            {{ csrf_field() }}
 
-                                @if ($errors->has('email') || $errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                            @if ($errors->has('email') || $errors->has('password'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
 
-                                <div class="form-group {{ $errors->has('email') || $errors->has('password') ? 'has-error' : '' }}">
-                                    <label class="text-primary">Email</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-                                    <label class="text-primary">Password</label>
-                                    <input id="password" type="password" class="form-control" name="password" required>
-                                </div>
-
-                                {{--<div class="form-group">
-                                    <label class="checkbox" for="remember">
-                                        <input type="checkbox" id="remember" name="remember" data-toggle="checkbox" {{ old('remember') ? 'checked' : '' }}>
-                                        Remember Me
-                                    </label>
-                                </div>--}}
-
-                                <button type="submit" class="btn btn-danger btn-block">Ingresar</button>
-                            </form>
-                            <div class="forgot">
-                                <a href="{{ route('password.request') }}" class="btn btn-simple btn-danger">Forgot password?</a>
+                            <div class="form-group {{ $errors->has('email') || $errors->has('password') ? 'has-error' : '' }}">
+                                <label class="text-dark">Email</label>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <label class="text-dark">Password</label>
+                                <input id="password" type="password" class="form-control" name="password" required>
                             </div>
+
+                            {{--<div class="form-group">
+                                <label class="checkbox" for="remember">
+                                    <input type="checkbox" id="remember" name="remember" data-toggle="checkbox" {{ old('remember') ? 'checked' : '' }}>
+                                    Remember Me
+                                </label>
+                            </div>--}}
+
+                            <button type="submit" class="btn btn-danger btn-fill btn-block">Ingresar</button>
+                        </form>
+                        <div class="forgot">
+                            <a href="{{ route('password.request') }}" class="btn btn-simple btn-danger">Forgot password?</a>
                         </div>
                     </div>
                 </div>
