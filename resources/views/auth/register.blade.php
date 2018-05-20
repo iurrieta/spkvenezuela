@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <nav class="navbar navbar-ct-transparent navbar-fixed-top" role="navigation-demo" id="register-navbar">
+    <nav class="navbar navbar-default">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -29,15 +29,20 @@
         </div><!-- /.container-->
     </nav>
 
-    <div class="wrapper">
-        <div class="register-background" style="background-image: url({{ asset('img/paper_img/landscape.jpg') }});">
-            <div class="filter-black"></div>
+
+    <div class="register-background">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 ">
-                        <div class="register-card">
+                <div align="center">
+                    <h2>Puedes elegir entre 2 tipos de cuenta</h2>
+                </div>
+                <div class="row" align="center">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="register-card card-app-success" align="left">
+                            <h3 class="text-dark" align="center">Estudiante</h3>
                             <form class="register-form" method="POST" action="{{ route('register') }}">
                                 {{ csrf_field() }}
+
+                                <input type="hidden" name="type" value="STUDENT">
 
                                 @if($errors->any())
                                     @foreach ($errors->all() as $error)
@@ -48,20 +53,55 @@
                                 @endif
 
                                 <div class="form-group {{ $errors->has('email') || $errors->has('password') ? 'has-error' : '' }}">
-                                    <label class="text-primary">Name</label>
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+                                    <label class="text-dark">Name</label>
+                                    <input type="text" class="form-control" name="name" required>
 
-                                    <label class="text-primary">Email</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                    <label class="text-dark">Email</label>
+                                    <input type="email" class="form-control" name="email" required>
 
-                                    <label class="text-primary">Password</label>
-                                    <input id="password" type="password" class="form-control" name="password" required>
+                                    <label class="text-dark">Password</label>
+                                    <input type="password" class="form-control" name="password" required>
 
-                                    <label class="text-primary">Confirm Password</label>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                    <label class="text-dark">Confirm Password</label>
+                                    <input type="password" class="form-control" name="password_confirmation" required>
                                 </div>
 
-                                <button type="submit" class="btn btn-danger btn-block">Registrar</button>
+                                <button type="submit" class="btn btn-success btn-fill btn-block">Registrar</button>
+                            </form>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="register-card card-app-primary" align="left">
+                            <h3 class="text-dark" align="center">Profesor</h3>
+                            <form class="register-form" method="POST" action="{{ route('register') }}">
+                                {{ csrf_field() }}
+
+                                <input type="hidden" name="type" value="TEACHER">
+
+                                @if($errors->any())
+                                    @foreach ($errors->all() as $error)
+                                        <span class="help-block">
+                                            <strong>{{ $error }}</strong>
+                                        </span>
+                                    @endforeach
+                                @endif
+
+                                <div class="form-group {{ $errors->has('email') || $errors->has('password') ? 'has-error' : '' }}">
+                                    <label class="text-dark">Name</label>
+                                    <input type="text" class="form-control" name="name" required>
+
+                                    <label class="text-dark">Email</label>
+                                    <input type="email" class="form-control" name="email" required>
+
+                                    <label class="text-dark">Password</label>
+                                    <input type="password" class="form-control" name="password" required>
+
+                                    <label class="text-dark">Confirm Password</label>
+                                    <input type="password" class="form-control" name="password_confirmation" required>
+                                </div>
+
+                                <button type="submit" class="btn btn-info btn-fill btn-block">Registrar</button>
                             </form>
                             <br>
                         </div>
@@ -69,5 +109,5 @@
                 </div>
             </div>
         </div>
-    </div>
+
 @endsection

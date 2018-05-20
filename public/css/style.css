@@ -1,9 +1,18 @@
+.text-dark {
+    color: #454545;
+}
 .main-panel {
     width: 100%;
 }
 .navbar-nav > li.active {
     color: #ac2925;
     border-bottom: 3px solid #ac2925;
+}
+[class*="navbar-ct"] .navbar-nav > .active > a:not(.btn),
+[class*="navbar-ct"] .navbar-nav > .active > a:hover:not(.btn),
+[class*="navbar-ct"] .navbar-nav > li > a:hover:not(.btn),
+[class*="navbar-ct"] .navbar-nav > li > a:focus:not(.btn) {
+    color: #ac2925;
 }
 .off-canvas-sidebar .nav li > a {
      opacity: 1;
@@ -28,4 +37,24 @@
     .nav-open .navbar .container {
         left: 0;
     }
+}
+
+.register-background {
+    background-image: none;
+    min-height: 0;
+}
+.register-background .container {
+     margin-top: 0;
+}
+.card-app-primary {
+    background-color: #7cd4ee;
+}
+.card-app-success {
+    background-color: #93eaba;
+}
+.card-app-warning {
+    background-color: #f9dda6;
+}
+.card-app-danger {
+    background-color: #f1c1af;
 }
