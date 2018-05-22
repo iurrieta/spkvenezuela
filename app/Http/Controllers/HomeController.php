@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $teachers = User::where('type', 'TEACHER')->get();
+        
+        $cards = array(
+            'card-app-primary',
+            'card-app-success',
+            'card-app-warning',
+            'card-app-danger'
+        );
+        
+        return view('home', compact('teachers', 'cards'));
     }
 }

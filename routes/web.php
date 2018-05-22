@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::resource('user', 'UsersController');
-
 // all users
 Route::get('users', 'UsersController@index')->name('users');
 
@@ -34,7 +32,4 @@ Route::put('profile/{id}/update', 'UsersController@update')->name('profile.updat
 Route::put('profile/{id}/uploadPhoto', 'UsersController@uploadPhoto')->name('profile.uploadPhoto');
 
 // teacher page
-//Route::get('teacher/{id}/detail', 'UsersController@show')->name('teacher');
-
-//Route::get('', '')->name();
-//Route::get('', '')->name();
+Route::get('teacher/{id}/detail', 'UsersController@teacherView')->name('teacher');
