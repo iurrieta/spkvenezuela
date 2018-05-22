@@ -12,12 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    
+    if (Auth::check())
+    {
+        return redirect('/teacher/all');
+    }
+    else
+    {
+        return view('welcome');
+    }
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 // all users
 Route::get('users', 'UsersController@index')->name('users');
@@ -30,6 +36,9 @@ Route::put('profile/{id}/update', 'UsersController@update')->name('profile.updat
 
 // upload photo
 Route::put('profile/{id}/uploadPhoto', 'UsersController@uploadPhoto')->name('profile.uploadPhoto');
+
+// teacher all
+Route::get('teacher/all', 'HomeController@index')->name('teachers');
 
 // teacher page
 Route::get('teacher/{id}/detail', 'UsersController@teacherView')->name('teacher');
