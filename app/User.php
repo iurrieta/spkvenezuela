@@ -9,6 +9,13 @@ use Webpatser\Uuid\Uuid;
 class User extends Authenticatable
 {
     use Notifiable;
+    
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +23,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'type',
+        'name', 'email', 'password', 'type', 'about', 'photo', 'facebook', 'instagram', 'twitter'
     ];
 
     /**
@@ -29,13 +36,23 @@ class User extends Authenticatable
     ];
     
     /**
+     * Hash password
+     *
+     * @param $value
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+    
+    /**
      *  Setup model event hooks
      */
     public static function boot()
     {
         parent::boot();
         self::creating(function ($model) {
-            $model->id = (string) Uuid::generate();
+            $model->id = Uuid::generate();
         });
     }
 }

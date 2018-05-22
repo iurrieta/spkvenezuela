@@ -17,15 +17,18 @@
     <link href="{{ asset('css/paper-dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+    {{--Plugins--}}
+    <link href="{{ asset('css/lib/pace/pace-dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/toastr/toastr.min.css') }}" rel="stylesheet">
+
     {{--Fonts and icons--}}
-    <link href="{{ asset('css/themify-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('fonts/css/font-awesome.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div class="wrapper">
         <div class="main-panel">
-            <nav class="navbar navbar-ct-danger">
+            <nav class="navbar navbar-ct-danger navbar-fixed-top">
                 <div class="container">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -41,18 +44,23 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="{{ Request::is('home') ? 'active' : '' }}">
                                     <a href="{{ url('/home') }}">
-                                        <i class="ti-home"></i> Home
+                                        <i class="fa fa-home"></i> Home
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="ti-user"></i> Perfil
+                                <li class="{{ Request::is('users*') ? 'active' : '' }}">
+                                    <a href="{{ route('users') }}">
+                                        <i class="fa fa-group"></i> Usuarios
+                                    </a>
+                                </li>
+                                <li class="{{ Request::is('profile*') ? 'active' : '' }}">
+                                    <a href="{{ route('profile', Auth::user()->id) }}">
+                                        <i class="fa fa-user"></i> Perfil
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        <i class="ti-shift-right"></i> Salir
+                                        <i class="fa fa-sign-out"></i> Salir
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -66,7 +74,7 @@
                 </div>
             </nav>
 
-            <div class="content">
+            <div class="content" style="padding-top: 120px">
                 <div class="container">
                     <div class="container-fluid">
                         {{--content--}}
@@ -83,17 +91,17 @@
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <i class="ti-facebook"></i>
+                                        <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="ti-instagram"></i>
+                                        <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="ti-twitter"></i>
+                                        <i class="fa fa-twitter"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -116,5 +124,19 @@
     {{--Plugins--}}
     <script src="{{ asset('js/lib/ct-paper-checkbox.js') }}"></script>
     <script src="{{ asset('js/lib/ct-paper.js') }}"></script>
+    <script src="{{ asset('js/lib/pace/pace.min.js') }}"></script>
+    <script src="{{ asset('js/lib/toastr/toastr.min.js') }}"></script>
+    <script>
+        // toastr message
+        @if(Session::has('message'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": false,
+                "positionClass": 'toast-bottom-right',
+                "timeOut": 6000
+            };
+            toastr.{{ Session::get('message.alert') }}("{{ Session::get('message.text') }}");
+        @endif
+    </script>
 </body>
 </html>

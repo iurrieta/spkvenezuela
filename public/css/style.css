@@ -10,6 +10,7 @@
 }
 [class*="navbar-ct"] .navbar-nav > .active > a:not(.btn),
 [class*="navbar-ct"] .navbar-nav > .active > a:hover:not(.btn),
+[class*="navbar-ct"] .navbar-nav > .active > a:focus:not(.btn),
 [class*="navbar-ct"] .navbar-nav > li > a:hover:not(.btn),
 [class*="navbar-ct"] .navbar-nav > li > a:focus:not(.btn) {
     color: #ac2925;
@@ -57,4 +58,10 @@
 }
 .card-app-danger {
     background-color: #f1c1af;
+}
+.navbar .navbar-nav > li > a i {
+
+}
+.image-app {
+    background-color: #FF8F5E;
 }

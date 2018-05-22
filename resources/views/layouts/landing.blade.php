@@ -18,7 +18,11 @@
     <link href="{{ asset('css/lib/ct-xpl.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+    {{--Plugins--}}
+    <link href="{{ asset('css/lib/pace/pace-landing.css') }}" rel="stylesheet">
+
     {{--Fonts and icons--}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset('css/themify-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('fonts/css/font-awesome.css') }}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
@@ -37,5 +41,6 @@
     {{--Plugins--}}
     <script src="{{ asset('js/lib/ct-paper-checkbox.js') }}"></script>
     <script src="{{ asset('js/lib/ct-paper.js') }}"></script>
+    <script src="{{ asset('js/lib/pace/pace.min.js') }}"></script>
 </body>
 </html>

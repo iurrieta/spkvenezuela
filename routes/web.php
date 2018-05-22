@@ -18,3 +18,23 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::resource('user', 'UsersController');
+
+// all users
+Route::get('users', 'UsersController@index')->name('users');
+
+// user profile
+Route::get('profile/{id}', 'UsersController@show')->name('profile');
+
+// update profile
+Route::put('profile/{id}/update', 'UsersController@update')->name('profile.update');
+
+// upload photo
+Route::put('profile/{id}/uploadPhoto', 'UsersController@uploadPhoto')->name('profile.uploadPhoto');
+
+// teacher page
+//Route::get('teacher/{id}/detail', 'UsersController@show')->name('teacher');
+
+//Route::get('', '')->name();
+//Route::get('', '')->name();
