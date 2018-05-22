@@ -38,13 +38,13 @@
                                 <span class="icon-bar bar2"></span>
                                 <span class="icon-bar bar3"></span>
                             </button>
-                            <a class="navbar-brand" href="{{ url('/home') }}">SPK Venezuela</a>
+                            <a class="navbar-brand" href="{{ url('/') }}">SPK Venezuela</a>
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="{{ Request::is('home') ? 'active' : '' }}">
-                                    <a href="{{ url('/home') }}">
-                                        <i class="fa fa-home"></i> Home
+                                <li class="{{ Request::is('teacher*') ? 'active' : '' }}">
+                                    <a href="{{ route('teachers') }}">
+                                        <i class="fa fa-user-circle-o"></i> Teachers
                                     </a>
                                 </li>
                                 <li class="{{ Request::is('users*') ? 'active' : '' }}">
