@@ -27,12 +27,6 @@
                     <li>
                         <a href="{{ url('/register') }}" class="btn btn-simple">Registrar</a>
                     </li>
-                    {{--<li>
-                        <a href="#" target="_blank" class="btn btn-simple"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" class="btn btn-simple"><i class="fa fa-facebook"></i></a>
-                    </li>--}}
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-->

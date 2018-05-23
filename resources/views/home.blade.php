@@ -17,9 +17,18 @@
                         <hr>
                         <br>
                         <div class="text-center">
-                            <button type="button" class="btn btn-fill btn-warning btn-icon">
-                                <i class="fa fa-star"></i> 4.5
-                            </button>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <button type="button" class="btn btn-primary btn-simple">
+                                        <i class="fa fa-star"></i> 4.5
+                                    </button>
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <button type="button" class="btn btn-primary btn-simple">
+                                        <i class="fa fa-comment"></i> {{ $teacher->teacher_comments->count() }}
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <br>
                     </div>
