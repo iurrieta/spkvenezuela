@@ -9,8 +9,8 @@
         <div class="container">
             <div class="row owner">
                 <div class="col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3 text-center">
-                    <div class="avatar">
-                        <img src="{{ asset('avatars/'. $teacher->photo) }}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    <div class="photo-profile">
+                        <img src="{{ asset('avatars/'. $teacher->photo) }}" alt="photo-profile" class="img-circle teacher-photo">
                     </div>
                     <div class="name">
                         <h4>{{ $teacher->name }}</h4>
@@ -43,12 +43,16 @@
             <br>
             <hr>
             <div class="col-md-6 col-md-offset-3 text-center" id="form-comment">
-                <form action="#">
+                <form action="{{ route('comment') }}" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="teacher" value="{{ $teacher->id }}">
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+
                     <div class="form-group">
                         <textarea rows="5" name="comment" class="form-control border-input" placeholder="Add some comment" required></textarea>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-danger"><i class="fa fa-comment"></i> Comment</button>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-comment"></i> Comment</button>
                     </div>
                 </form>
             </div>
@@ -57,13 +61,15 @@
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3">
                             <ul class="list-unstyled follows">
-                                <li>
-                                    <div class="">
-                                        <h5>Flume <br><small>2018-22-5 17:05:00</small></h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A culpa cumque odio odit quia quis, soluta suscipit. Accusantium, animi architecto, et expedita incidunt maxime nesciunt nobis porro repellendus similique unde.</p>
-                                    </div>
-                                </li>
-                                <hr>
+                                @foreach($teacher->teacher_comments->sortByDesc('created_at') as $comment)
+                                    <li>
+                                        <div class="">
+                                            <h5>{{ $comment->user->name }} <br><small>{{ $comment->created_at }}</small></h5>
+                                            <p>{{ $comment->comment }}</p>
+                                        </div>
+                                    </li>
+                                    <hr class="hrr">
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -71,34 +77,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Rate Teacher</h4>
-                </div>
-                <div class="modal-body" align="center">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="modal-footer">
-                    <div class="left-side">
-                        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Never mind</button>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="right-side">
-                        <button type="button" class="btn btn-danger btn-simple">Rate</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--    end modal -->
 @endsection

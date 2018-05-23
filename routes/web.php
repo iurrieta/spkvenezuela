@@ -42,3 +42,6 @@ Route::get('teacher/all', 'HomeController@index')->name('teachers');
 
 // teacher page
 Route::get('teacher/{id}/detail', 'UsersController@teacherView')->name('teacher');
+
+// add comment
+Route::post('teacher/comment', 'CommentsController@store')->name('comment');

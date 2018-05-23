@@ -65,78 +65,26 @@
 .image-app {
     background-color: #FF8F5E;
 }
-.modal-header {
-    border-bottom: 1px solid #DDDDDD;
-    padding: 20px;
-    text-align: center;
+.hrr {
+    border-color: #a94442;
 }
-
-.modal-content {
-    border: 0 none;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.1);
+/*.teacher-photo {
+    width: 200px;
+    height: 200px;
 }
-
-.modal-dialog {
-    padding-top: 60px;
-}
-
-.modal-body {
-    padding: 20px 50px;
-}
-
-.modal-footer {
-    border-top: 1px solid #DDDDDD;
-    padding: 0px;
-}
-
-.modal-footer .left-side, .modal-footer .right-side {
-    display: inline-block;
-    text-align: center;
-    width: 49%;
-}
-
-.modal-footer .btn-simple {
-    padding: 20px;
-    width: 100%;
-}
-
-.modal-footer .divider {
-    background-color: #DDDDDD;
-    display: inline-block;
-    float: inherit;
-    height: 63px;
-    margin: 0px -3px;
-    position: absolute;
-    width: 1px;
-}
-
-.modal.fade .modal-dialog {
-    transform: none;
-    -webkit-transform: none;
-    -moz-transform: none;
-}
-
-.modal.in .modal-dialog {
-    transform: none;
-    -webkit-transform: none;
-    -moz-transform: none;
-}
-
-.modal-backdrop.in {
-    opacity: 0.25;
-}
-.lightbox .modal-content{
-    overflow: hidden;
-}
-.lightbox .modal-body{
-    padding: 0;
-}
-@media screen and (min-width: 991px){
-    .lightbox .modal-dialog{
-        width: 960px;
+@media screen and (max-width: 991px){
+    .teacher-photo {
+        width: 100px;
+        height: 100px;
     }
-}
-.modal-backdrop {
-    z-index: 0;
+}*/
+
+.photo-profile .teacher-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+    /*margin-right: 5px;*/
 }

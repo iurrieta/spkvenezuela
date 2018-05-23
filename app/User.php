@@ -55,4 +55,20 @@ class User extends Authenticatable
             $model->id = Uuid::generate();
         });
     }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teacher_comments()
+    {
+        return $this->hasMany('App\Comment', 'teacher');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function user_comments()
+    {
+        return $this->hasMany('App\Comment', 'user_id');
+    }
 }

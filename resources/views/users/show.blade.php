@@ -47,7 +47,7 @@
                                 <div class="col-xs-6">
                                     <b>Comments</b>
                                     <br />
-                                    520
+                                    {{ $user->teacher_comments->count() }}
                                 </div>
                             </div>
                         </div>
