@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
+    /**
+     * Create new comment
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $comment = new Comment();

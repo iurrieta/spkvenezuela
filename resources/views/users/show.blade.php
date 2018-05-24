@@ -35,7 +35,11 @@
                                 <div class="col-xs-6">
                                     <b>Rate</b>
                                     <br />
-                                    4.5
+                                    @if($user->teacher_rates->sum('star') > 0)
+                                        {{ round($user->teacher_rates->sum('star') / $user->teacher_rates->count(), 1) }}
+                                    @else
+                                        0
+                                    @endif
                                 </div>
                             </div>
                         </div>

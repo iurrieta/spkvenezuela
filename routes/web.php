@@ -45,3 +45,6 @@ Route::get('teacher/{id}/detail', 'UsersController@teacherView')->name('teacher'
 
 // add comment
 Route::post('teacher/comment', 'CommentsController@store')->name('comment');
+
+// add rate
+Route::post('teacher/rate', 'RatesController@store')->name('rate');

@@ -68,6 +68,9 @@
 .hrr {
     border-color: #a94442;
 }
+.card .description {
+    word-wrap: break-word;
+}
 /*.teacher-photo {
     width: 200px;
     height: 200px;

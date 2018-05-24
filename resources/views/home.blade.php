@@ -20,7 +20,11 @@
                             <div class="row">
                                 <div class="col-sm-6 col-md-6">
                                     <button type="button" class="btn btn-primary btn-simple">
-                                        <i class="fa fa-star"></i> 4.5
+                                        @if($teacher->teacher_rates->sum('star') > 0)
+                                            <i class="fa fa-star"></i> {{ round($teacher->teacher_rates->sum('star') / $teacher->teacher_rates->count(), 1) }}
+                                        @else
+                                            <i class="fa fa-star"></i> 0
+                                        @endif
                                     </button>
                                 </div>
                                 <div class="col-sm-6 col-md-6">
