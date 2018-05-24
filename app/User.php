@@ -71,4 +71,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Comment', 'user_id');
     }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teacher_rates()
+    {
+        return $this->hasMany('App\Rate', 'teacher');
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -182,8 +183,16 @@ class UsersController extends Controller
      */
     public function teacherView($id)
     {
+        // teacher info
         $teacher = User::find($id);
         
-        return view('users.teacher', compact('teacher'));
+        // average rate
+        if ($teacher->teacher_rates->sum('star') > 0) {
+            $rate = $teacher->teacher_rates->sum('star') / $teacher->teacher_rates->count();
+        } else {
+            $rate = 0;
+        }
+        
+        return view('users.teacher', compact('teacher', 'rate'));
     }
 }

@@ -119,13 +119,13 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/paper-dashboard.js') }}"></script>
-    {{--<script src="{{ asset('js/app.js') }}"></script>--}}
 
     {{--Plugins--}}
     <script src="{{ asset('js/lib/ct-paper-checkbox.js') }}"></script>
     <script src="{{ asset('js/lib/ct-paper.js') }}"></script>
     <script src="{{ asset('js/lib/pace/pace.min.js') }}"></script>
     <script src="{{ asset('js/lib/toastr/toastr.min.js') }}"></script>
+    <script src="{{ asset('js/lib/rater-js/index.js') }}"></script>
     <script>
         // toastr message
         @if(Session::has('message'))
@@ -138,5 +138,8 @@
             toastr.{{ Session::get('message.alert') }}("{{ Session::get('message.text') }}");
         @endif
     </script>
+
+    @yield('script')
+
 </body>
 </html>
