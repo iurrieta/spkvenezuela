@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <br>
-                    <p>{{ $teacher->about }}</p>
+                    <p style="word-wrap: break-word">{{ $teacher->about }}</p>
                     <br />
                     <div class="rate">
                         <a href="#" class="btn btn-icon btn-default"><i class="fa fa-facebook"></i></a>

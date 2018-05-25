@@ -12,13 +12,15 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Type</th>
+                <th>Status</th>
                 </thead>
                 <tbody>
                 @foreach($users as $user)
                     <tr>
-                        <td><a href="{{ route('profile', $user->id) }}">{{ $user->name }}</a></td>
+                        <td><a href="{{ route('user', $user->id) }}">{{ $user->name }}</a></td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->type }}</td>
+                        <td>{{ $user->status }}</td>
                     </tr>
                 @endforeach
                 </tbody>
