@@ -31,27 +31,6 @@ class UsersController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -61,18 +40,11 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         
-        return view('users.show', compact('user'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        if (Auth::user()->type == 'ADMINISTRATOR' && Auth::user()->id != $user->id) {
+            return view('users.showAdmin', compact('user'));
+        } else {
+            return view('users.show', compact('user'));
+        }
     }
 
     /**
@@ -111,17 +83,6 @@ class UsersController extends Controller
     
             return redirect()->route('profile', $user->id);
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
     
     /**
@@ -194,5 +155,44 @@ class UsersController extends Controller
         }
         
         return view('users.teacher', compact('teacher', 'rate'));
+    }
+    
+    /**
+     * Change user status
+     *
+     * @param Request $request
+     * @param         $id
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function changeStatus(Request $request, $id)
+    {
+        $user = User::find($id);
+        
+        if ($user->status == 'ACTIVATED') {
+            $user->status = 'DEACTIVATED';
+            
+            $message = 'User deactivated';
+        } else {
+            $user->status = 'ACTIVATED';
+    
+            $message = 'User activated';
+        }
+    
+        if ($user->update()) {
+            $request->session()->flash('message', [
+                'alert' => 'success',
+                'text'  => $message
+            ]);
+        
+            return redirect()->route('user', $user->id);
+        } else {
+            $request->session()->flash('message', [
+                'alert' => 'error',
+                'text'  => 'Error to change status'
+            ]);
+        
+            return redirect()->route('user', $user->id);
+        }
     }
 }

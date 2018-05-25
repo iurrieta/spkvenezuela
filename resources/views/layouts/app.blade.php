@@ -47,7 +47,7 @@
                                         <i class="fa fa-user-circle-o"></i> Teachers
                                     </a>
                                 </li>
-                                <li class="{{ Request::is('users*') ? 'active' : '' }}">
+                                <li class="{{ Request::is('user*') ? 'active' : '' }}">
                                     <a href="{{ route('users') }}">
                                         <i class="fa fa-group"></i> Usuarios
                                     </a>

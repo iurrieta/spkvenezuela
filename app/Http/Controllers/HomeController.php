@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $teachers = User::where('type', 'TEACHER')->get();
+        $teachers = User::where('type', 'TEACHER')
+                        ->where('status', 'ACTIVATED')->get();
         
         $cards = array(
             'card-app-primary',

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->enum('type', ['ADMINISTRATOR', 'TEACHER', 'STUDENT']);
             $table->longText('about')->nullable();
             $table->string('photo')->nullable();
+            $table->enum('status', ['ACTIVATED', 'DEACTIVATED'])->default('ACTIVATED');
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('twitter')->nullable();
