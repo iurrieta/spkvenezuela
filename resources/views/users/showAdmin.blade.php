@@ -36,18 +36,41 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-md-4">
-                                <label>Facebook</label>
-                                <h5>{{ $user->facebook }}</h5>
-                            </div>
-                            <div class="col-md-4">
-                                <label>Instagram</label>
-                                <h5>{{ $user->instagram }}</h5>
-                            </div>
-                            <div class="col-md-4">
-                                <label>Twitter</label>
-                                <h5>{{ $user->twitter }}</h5>
-                            </div>
+                            @unless(empty($user->facebook) || is_null($user->facebook))
+                                <div class="col-md-4">
+                                    <label>Facebook</label>
+                                    <h5>{{ $user->facebook }}</h5>
+                                </div>
+                            @endunless
+
+                            @unless(empty($user->instagram) || is_null($user->instagram))
+                                <div class="col-md-4">
+                                    <label>Instagram</label>
+                                    <h5>{{ $user->instagram }}</h5>
+                                </div>
+                            @endunless
+
+                            @unless(empty($user->twitter) || is_null($user->twitter))
+                                <div class="col-md-4">
+                                    <label>Twitter</label>
+                                    <h5>{{ $user->twitter }}</h5>
+                                </div>
+                            @endunless
+
+                            @unless(empty($user->linkedin) || is_null($user->linkedin))
+                                <div class="col-md-4">
+                                    <label>Linkedin</label>
+                                    <h5>{{ $user->linkedin }}</h5>
+                                </div>
+                            @endunless
+
+                            @unless(empty($user->skype) || is_null($user->skype))
+                                <div class="col-md-4">
+                                    <label>Skype</label>
+                                    <h5>{{ $user->skype }}</h5>
+                                </div>
+                            @endunless
+
                         </div>
                         <br>
                         <div class="row">

@@ -8,7 +8,17 @@ use Illuminate\Http\Request;
 class CommentsController extends Controller
 {
     /**
-     * Create new comment
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    /**
+     * Save new comment
      *
      * @param Request $request
      *
