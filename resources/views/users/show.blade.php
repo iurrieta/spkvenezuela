@@ -17,10 +17,10 @@
                             {{ csrf_field() }}
 
                             <label class="btn btn-simple btn-danger">
-                                <i class="fa fa-upload"></i> Photo <input type="file" name="photo" required style="display: none !important;">
+                                <i class="fa fa-picture-o"></i> Photo <input type="file" name="photo" required style="display: none !important;">
                             </label>
                             <br>
-                            <button type="submit" class="btn btn-fill btn-danger"><i class="fa fa-save"></i> Save</button>
+                            <button type="submit" class="btn btn-fill btn-danger"><i class="fa fa-upload"></i> Upload</button>
                         </form>
                     </div>
                 </div>
@@ -99,6 +99,21 @@
                                 <div class="form-group">
                                     <label>Twitter</label>
                                     <input type="text" name="twitter" class="form-control border-input" value="{{ $user->twitter }}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Linkedin</label>
+                                    <input type="text" name="linkedin" class="form-control border-input" value="{{ $user->linkedin }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Skype</label>
+                                    <input type="text" name="skype" class="form-control border-input" value="{{ $user->skype }}">
                                 </div>
                             </div>
                         </div>

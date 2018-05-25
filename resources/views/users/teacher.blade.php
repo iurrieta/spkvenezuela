@@ -25,11 +25,37 @@
                     <p style="word-wrap: break-word">{{ $teacher->about }}</p>
                     <br />
                     <div class="rate">
-                        <a href="#" class="btn btn-icon btn-default"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="btn btn-icon btn-default"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="btn btn-icon btn-default"><i class="fa fa-twitter"></i></a>
-                    </div>
+                        @unless(empty($teacher->facebook) || is_null($teacher->facebook))
+                            <button type="button" class="btn btn-icon btn-simple btn-default">
+                                <i class="fa fa-facebook"></i> {{ $teacher->facebook }}
+                            </button>
+                        @endunless
 
+                        @unless(empty($teacher->instagram) || is_null($teacher->instagram))
+                            <button type="button" class="btn btn-icon btn-simple btn-default">
+                                <i class="fa fa-instagram"></i> {{ $teacher->instagram }}
+                            </button>
+                        @endunless
+
+                        @unless(empty($teacher->twitter) || is_null($teacher->twitter))
+                            <button type="button" class="btn btn-icon btn-simple btn-default">
+                                <i class="fa fa-twitter"></i> {{ $teacher->twitter }}
+                            </button>
+                        @endunless
+
+                        @unless(empty($teacher->linkedin) || is_null($teacher->linkedin))
+                            <button type="button" class="btn btn-icon btn-simple btn-default">
+                                <i class="fa fa-linkedin"></i> {{ $teacher->linkedin }}
+                            </button>
+                        @endunless
+
+                        @unless(empty($teacher->skype) || is_null($teacher->skype))
+                            <button type="button" class="btn btn-icon btn-simple btn-default">
+                                <i class="fa fa-skype"></i> {{ $teacher->skype }}
+                            </button>
+                        @endunless
+
+                    </div>
                 </div>
             </div>
             <br>
