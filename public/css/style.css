@@ -39,14 +39,6 @@
         left: 0;
     }
 }
-
-.register-background {
-    background-image: none;
-    min-height: 0;
-}
-.register-background .container {
-     margin-top: 0;
-}
 .card-app-primary {
     background-color: #7cd4ee;
 }
