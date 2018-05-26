@@ -26,13 +26,13 @@ Route::get('/', function () {
 Auth::routes();
 
 // all users
-Route::get('user/all', 'UsersController@index')->name('users');
+Route::get('user/all', 'UsersController@index')->name('users')->middleware('admin');
 
 // user detail
-Route::get('user/{id}/detail', 'UsersController@show')->name('user');
+Route::get('user/{id}/detail', 'UsersController@show')->name('user')->middleware('admin');
 
 // activate/deactivate users
-Route::post('user/{id}/changeStatus', 'UsersController@changeStatus')->name('changeStatus');
+Route::post('user/{id}/changeStatus', 'UsersController@changeStatus')->name('changeStatus')->middleware('admin');
 
 // user profile
 Route::get('profile/{id}', 'UsersController@show')->name('profile');

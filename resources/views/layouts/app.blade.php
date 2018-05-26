@@ -47,11 +47,14 @@
                                         <i class="fa fa-user-circle-o"></i> Teachers
                                     </a>
                                 </li>
-                                <li class="{{ Request::is('user*') ? 'active' : '' }}">
-                                    <a href="{{ route('users') }}">
-                                        <i class="fa fa-group"></i> Usuarios
-                                    </a>
-                                </li>
+                                @if(Auth::user()->type == 'ADMINISTRATOR')
+                                    <li class="{{ Request::is('user*') ? 'active' : '' }}">
+                                        <a href="{{ route('users') }}">
+                                            <i class="fa fa-group"></i> Usuarios
+                                        </a>
+                                    </li>
+                                @endif
+
                                 <li class="{{ Request::is('profile*') ? 'active' : '' }}">
                                     <a href="{{ route('profile', Auth::user()->id) }}">
                                         <i class="fa fa-user"></i> Perfil
