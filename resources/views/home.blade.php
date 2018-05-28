@@ -40,4 +40,7 @@
             </div>
         @endforeach
     </div>
+    <div align="center">
+        {{ $teachers->links() }}
+    </div>
 @endsection

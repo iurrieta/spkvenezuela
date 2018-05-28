@@ -25,7 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $teachers = User::where('type', 'TEACHER')
-                        ->where('status', 'ACTIVATED')->get();
+                        ->where('status', 'ACTIVATED')
+                        ->paginate(9);
         
         $cards = array(
             'card-app-primary',

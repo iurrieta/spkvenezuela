@@ -23,8 +23,10 @@
                         <td>{{ $user->status }}</td>
                     </tr>
                 @endforeach
-                </tbody>
             </table>
+            <div align="center">
+                {{ $users->links() }}
+            </div>
         </div>
     </div>
 @endsection
