@@ -10,7 +10,13 @@
             <div class="row owner">
                 <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3 text-center">
                     <div class="photo-profile">
-                        <img src="{{ asset('avatars/'. $teacher->photo) }}" alt="photo-profile" class="img-circle teacher-photo">
+
+
+                        @if(is_null($teacher->photo) || empty($teacher->photo))
+                            <img class="img-circle teacher-photo" src="{{ asset('img/p03.png') }}" alt="profile-photo"/>
+                        @else
+                            <img src="{{ asset('avatars/'. $teacher->photo) }}" alt="photo-profile" class="img-circle teacher-photo">
+                        @endif
                     </div>
                     <div class="name">
                         <h4>{{ $teacher->name }}</h4>

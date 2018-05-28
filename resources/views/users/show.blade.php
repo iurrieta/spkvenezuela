@@ -11,7 +11,13 @@
                 <div class="image image-app"></div>
                 <div class="content">
                     <div class="author">
-                        <img class="avatar border-white" src="{{ asset('avatars/'. $user->photo) }}" alt="profile-photo"/>
+
+                        @if(is_null($user->photo) || empty($user->photo))
+                            <img class="avatar border-white" src="{{ asset('img/p02.png') }}" alt="profile-photo"/>
+                        @else
+                            <img class="avatar border-white" src="{{ asset('avatars/'. $user->photo) }}" alt="profile-photo"/>
+                        @endif
+
                         <form action="{{ route('profile.uploadPhoto', $user->id) }}" method="POST" enctype="multipart/form-data">
                             {{ method_field('PUT') }}
                             {{ csrf_field() }}

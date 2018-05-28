@@ -9,7 +9,12 @@
                         <div class="image {{ $cards[rand(0, 3)] }}"></div>
                         <div class="content">
                             <div class="author">
-                                <img class="avatar border-white" src="{{ asset('avatars/'. $teacher->photo) }}" alt="profile-photo"/>
+                                @if(is_null($teacher->photo) || empty($teacher->photo))
+                                    <img class="avatar border-white" src="{{ asset('img/p02.png') }}" alt="profile-photo"/>
+                                @else
+                                    <img class="avatar border-white" src="{{ asset('avatars/'. $teacher->photo) }}" alt="profile-photo"/>
+                                @endif
+
                                 <h4 class="title">{{ $teacher->name }}</h4>
                             </div>
                             <p class="description text-center">{{ substr($teacher->about, 0, 100) }}...</p>
