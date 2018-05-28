@@ -2,13 +2,23 @@
 
 namespace App;
 
+use Webpatser\Uuid\Uuid;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Webpatser\Uuid\Uuid;
+use App\Notifications\ResetPassword as ResetPasswordNotification;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    
+    /**
+     * @param string $token
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        // Your your own implementation.
+        $this->notify(new ResetPasswordNotification($token));
+    }
     
     /**
      * Indicates if the IDs are auto-incrementing.

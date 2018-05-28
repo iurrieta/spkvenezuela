@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'id' => Uuid::generate(),
-                'name' => 'Ildemar',
+                'name' => 'Admin',
                 'email' => 'admin@admin.com',
                 'password' => bcrypt('1234'),
                 'type' => 'ADMINISTRATOR',
