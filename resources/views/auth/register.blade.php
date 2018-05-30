@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navigation-example-2">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{{ route('login') }}" class="btn btn-simple">Ingresar</a>
+                        <a href="{{ route('login') }}" class="btn btn-simple">@lang('app.login')</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -36,7 +36,7 @@
                 <div class="row" align="center">
                     <div class="col-md-6 col-sm-6 col-xs-12 ">
                         <div class="register-card" align="left">
-                            <h3 class="text-dark" align="center">Estudiante</h3>
+                            <h3 class="text-dark" align="center">@lang('app.student')</h3>
                             <form class="register-form" method="POST" action="{{ route('register') }}">
                                 {{ csrf_field() }}
 
@@ -64,14 +64,14 @@
                                     <input type="password" class="form-control" name="password_confirmation" required>
                                 </div>
 
-                                <button type="submit" class="btn btn-success btn-fill btn-block">Registrar</button>
+                                <button type="submit" class="btn btn-success btn-fill btn-block">@lang('app.register')</button>
                             </form>
                             <br>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12 ">
                         <div class="register-card" align="left">
-                            <h3 class="text-dark" align="center">Profesor</h3>
+                            <h3 class="text-dark" align="center">@lang('app.teacher')</h3>
                             <form class="register-form" method="POST" action="{{ route('register') }}">
                                 {{ csrf_field() }}
 
@@ -99,7 +99,7 @@
                                     <input type="password" class="form-control" name="password_confirmation" required>
                                 </div>
 
-                                <button type="submit" class="btn btn-info btn-fill btn-block">Registrar</button>
+                                <button type="submit" class="btn btn-info btn-fill btn-block">@lang('app.register')</button>
                             </form>
                             <br>
                         </div>

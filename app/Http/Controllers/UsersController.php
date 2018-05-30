@@ -97,30 +97,28 @@ class UsersController extends Controller
     {
         $user = User::find($id);
     
-        // check if photo exist
-        if ($request->hasFile('photo')) {
-            
-            // get current time and append the upload file extension to it,
-            // then put that name to $photoName variable.
-            $avatar = time().'.'.$request->photo->getClientOriginalExtension();
+        $hasFile = $request->hasFile("photo") && $request->photo->isValid();
     
-            // talk the select file and move it public directory and make avatars
-            // folder if doesn't exsit then give it that unique name.
-            $request->photo->move(public_path('avatars'), $avatar);
-            
-            $user->photo = $avatar;
+        // check if photo exist
+        if ($hasFile) {
+            // get image extension
+            $extension = $request->photo->extension();
+            $user->photo = "$user->id.$extension";
     
             if ($user->update()) {
+                // store the image
+                $request->photo->storeAs("avatars", "$user->photo");
+                
                 $request->session()->flash('message', [
                     'alert' => 'success',
-                    'text'  => 'Photo saved'
+                    'text'  => 'Photo uploaded'
                 ]);
         
                 return redirect()->route('profile', $user->id);
             } else {
                 $request->session()->flash('message', [
                     'alert' => 'error',
-                    'text'  => 'Error to save'
+                    'text'  => 'Error to upload'
                 ]);
         
                 return redirect()->route('profile', $user->id);

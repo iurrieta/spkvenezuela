@@ -63,17 +63,6 @@
 .card .description {
     word-wrap: break-word;
 }
-/*.teacher-photo {
-    width: 200px;
-    height: 200px;
-}
-@media screen and (max-width: 991px){
-    .teacher-photo {
-        width: 100px;
-        height: 100px;
-    }
-}*/
-
 .photo-profile .teacher-photo {
     width: 150px;
     height: 150px;
@@ -81,5 +70,12 @@
     position: relative;
     margin-bottom: 15px;
     overflow: hidden;
-    /*margin-right: 5px;*/
+}
+.middle-box {
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.gray-bg, .bg-muted {
+    background-color: #f3f3f4;
 }

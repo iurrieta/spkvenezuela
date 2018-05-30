@@ -22,10 +22,10 @@
             <div class="collapse navbar-collapse" id="navigation-example-2">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{{ url('/login') }}" class="btn btn-simple">Ingresar</a>
+                        <a href="{{ url('/login') }}" class="btn btn-simple">@lang('app.login')</a>
                     </li>
                     <li>
-                        <a href="{{ url('/register') }}" class="btn btn-simple">Registrar</a>
+                        <a href="{{ url('/register') }}" class="btn btn-simple">@lang('app.register')</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -97,36 +97,6 @@
                     </div>
                 </div>
             </div>
-
-            {{--<div class="section landing-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h2 class="text-center">Keep in touch?</h2>
-                            <form class="contact-form">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Name</label>
-                                        <input class="form-control" placeholder="Name">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>Email</label>
-                                        <input class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <label>Message</label>
-                                <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-4">
-                                        <button class="btn btn-danger btn-block btn-lg btn-fill">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>--}}
         </div>
     </div>
 
@@ -135,10 +105,10 @@
             <nav class="pull-left">
                 <ul>
                     <li>
-                        <a href="{{ url('/login') }}">Ingresar</a>
+                        <a href="{{ url('/login') }}">@lang('app.login')</a>
                     </li>
                     <li>
-                        <a href="{{ url('/register') }}">Registrar</a>
+                        <a href="{{ url('/register') }}">@lang('app.register')</a>
                     </li>
                 </ul>
             </nav>

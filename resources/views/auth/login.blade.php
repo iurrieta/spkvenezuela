@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navigation-example-2">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{{ route('register') }}" class="btn btn-simple">Registrar</a>
+                        <a href="{{ route('register') }}" class="btn btn-simple">@lang('app.register')</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -52,7 +52,7 @@
                                     <input id="password" type="password" class="form-control" name="password" required>
                                 </div>
 
-                                <button type="submit" class="btn btn-danger btn-fill btn-block">Ingresar</button>
+                                <button type="submit" class="btn btn-danger btn-fill btn-block">@lang('app.login')</button>
                             </form>
                             <div class="forgot">
                                 <a href="{{ route('password.request') }}" class="btn btn-simple btn-danger">Forgot password?</a>

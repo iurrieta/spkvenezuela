@@ -54,3 +54,18 @@ Route::post('teacher/comment', 'CommentsController@store')->name('comment');
 
 // add rate
 Route::post('teacher/rate', 'RatesController@store')->name('rate');
+
+// get images
+Route::get("photo_profile/{filename}", function($filename) {
+    $path = storage_path("app/avatars/$filename");
+    
+    if (!\File::exists($path)) abort(404);
+    
+    $file = \File::get($path); // file
+    $type = \File::mimeType($path); // type file
+    
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    
+    return $response;
+})->name('photo_profile');

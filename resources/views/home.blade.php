@@ -12,7 +12,7 @@
                                 @if(is_null($teacher->photo) || empty($teacher->photo))
                                     <img class="avatar border-white" src="{{ asset('img/p02.png') }}" alt="profile-photo"/>
                                 @else
-                                    <img class="avatar border-white" src="{{ asset('avatars/'. $teacher->photo) }}" alt="profile-photo"/>
+                                    <img class="avatar border-white" src="{{ route('photo_profile', $teacher->photo) }}" alt="profile-photo"/>
                                 @endif
 
                                 <h4 class="title">{{ $teacher->name }}</h4>

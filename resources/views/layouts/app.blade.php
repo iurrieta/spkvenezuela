@@ -44,26 +44,26 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="{{ Request::is('teacher*') ? 'active' : '' }}">
                                     <a href="{{ route('teachers') }}">
-                                        <i class="fa fa-user-circle-o"></i> Teachers
+                                        <i class="fa fa-user-circle-o"></i> @lang('app.teachers')
                                     </a>
                                 </li>
                                 @if(Auth::user()->type == 'ADMINISTRATOR')
                                     <li class="{{ Request::is('user*') ? 'active' : '' }}">
                                         <a href="{{ route('users') }}">
-                                            <i class="fa fa-group"></i> Usuarios
+                                            <i class="fa fa-group"></i> @lang('app.users')
                                         </a>
                                     </li>
                                 @endif
 
                                 <li class="{{ Request::is('profile*') ? 'active' : '' }}">
                                     <a href="{{ route('profile', Auth::user()->id) }}">
-                                        <i class="fa fa-user"></i> Perfil
+                                        <i class="fa fa-user"></i> @lang('app.profile')
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        <i class="fa fa-sign-out"></i> Salir
+                                        <i class="fa fa-sign-out"></i> @lang('app.logout')
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

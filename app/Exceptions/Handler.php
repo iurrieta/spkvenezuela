@@ -45,6 +45,36 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
+    
+        switch ($exception)
+        {
+            // error 404
+            case $exception instanceof NotFoundHttpException:
+                return response()->view('errors.404', [], 404);
+        
+            // error 405
+            case $exception instanceof MethodNotAllowedHttpException:
+                return response()->view('errors.405', [], 405);
+        
+            // error 500
+            // QueryException
+        
+            case $exception instanceof \ErrorException:
+                return response()->view('errors.500', [], 500);
+        
+            case $exception instanceof \BadMethodCallException:
+                return response()->view('errors.500', [], 500);
+        
+            case $exception instanceof \Symfony\Component\Debug\Exception\FatalErrorException:
+                return response()->view('errors.500', [], 500);
+        
+            case $exception instanceof \RuntimeException:
+                return response()->view('errors.500', [], 500);
+                
+            // otros
+            default:
+                return parent::render($request, $exception);
+        }
     }
 
     /**
