@@ -53,7 +53,7 @@
                                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                                 </div>
 
-                                <button type="submit" class="btn btn-warning btn-fill btn-block">Send Password Reset Link</button>
+                                <button type="submit" class="btn btn-warning btn-fill btn-block">Send Link</button>
                             </form>
                         </div>
                     </div>
@@ -62,4 +62,3 @@
         </div>
     </div>
 @endsection
-

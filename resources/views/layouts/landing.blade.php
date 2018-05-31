@@ -20,6 +20,7 @@
 
     {{--Plugins--}}
     <link href="{{ asset('css/lib/pace/pace-landing.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/toastr/toastr.min.css') }}" rel="stylesheet">
 
     {{--Fonts and icons--}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -42,5 +43,18 @@
     <script src="{{ asset('js/lib/ct-paper-checkbox.js') }}"></script>
     <script src="{{ asset('js/lib/ct-paper.js') }}"></script>
     <script src="{{ asset('js/lib/pace/pace.min.js') }}"></script>
+    <script src="{{ asset('js/lib/toastr/toastr.min.js') }}"></script>
+    <script>
+        // toastr message
+        @if(Session::has('message'))
+            toastr.options = {
+            "closeButton": true,
+            "progressBar": false,
+            "positionClass": 'toast-bottom-right',
+            "timeOut": 6000
+        };
+        toastr.{{ Session::get('message.alert') }}("{{ Session::get('message.text') }}");
+        @endif
+    </script>
 </body>
 </html>
