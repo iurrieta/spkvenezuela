@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('title')
-    SPK Venezuela | Registrar
+    SPK Venezuela | Register
 @endsection
 
 @section('content')
@@ -15,7 +15,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">SPK Venezuela</a>
+                <a href="/">
+                    <img src="{{ asset('img/logo04.png') }}" alt="logo" style="height: 65px">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,8 +37,10 @@
             <div class="container">
                 <div class="row" align="center">
                     <div class="col-md-6 col-sm-6 col-xs-12 ">
+                        <img src="{{ asset('img/logo04.png') }}" alt="logo" style="">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 ">
                         <div class="register-card" align="left">
-                            <h3 class="text-dark" align="center">@lang('app.student')</h3>
                             <form class="register-form" method="POST" action="{{ route('register') }}">
                                 {{ csrf_field() }}
 
@@ -66,41 +70,7 @@
 
                                 <button type="submit" class="btn btn-success btn-fill btn-block">@lang('app.register')</button>
                             </form>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12 ">
-                        <div class="register-card" align="left">
-                            <h3 class="text-dark" align="center">@lang('app.teacher')</h3>
-                            <form class="register-form" method="POST" action="{{ route('register') }}">
-                                {{ csrf_field() }}
-
-                                <input type="hidden" name="type" value="TEACHER">
-
-                                @if($errors->any())
-                                    @foreach ($errors->all() as $error)
-                                        <span class="help-block">
-                                            <strong>{{ $error }}</strong>
-                                        </span>
-                                    @endforeach
-                                @endif
-
-                                <div class="form-group {{ $errors->has('email') || $errors->has('password') ? 'has-error' : '' }}">
-                                    <label class="text-dark">Name</label>
-                                    <input type="text" class="form-control" name="name" required>
-
-                                    <label class="text-dark">Email</label>
-                                    <input type="email" class="form-control" name="email" required>
-
-                                    <label class="text-dark">Password</label>
-                                    <input type="password" class="form-control" name="password" required>
-
-                                    <label class="text-dark">Confirm Password</label>
-                                    <input type="password" class="form-control" name="password_confirmation" required>
-                                </div>
-
-                                <button type="submit" class="btn btn-info btn-fill btn-block">@lang('app.register')</button>
-                            </form>
+                            <a href="{{ route('becomeTeacher') }}" class="btn btn-info btn-fill btn-block">Become a teacher</a>
                             <br>
                         </div>
                     </div>

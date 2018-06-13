@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('title')
-    SPK Venezuela | Forgot Password
+    SPK Venezuela | Become Teacher
 @endsection
 
 @section('content')
@@ -41,22 +41,23 @@
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 ">
                         <div class="register-card">
-                            <form class="register-form" method="POST" action="{{ route('password.email') }}">
+                            <form class="register-form" method="POST" action="{{ route('becomeTeacherSendMail') }}">
                                 {{ csrf_field() }}
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                                @endif
+                                <div class="form-group {{ $errors->has('email') || $errors->has('password') ? 'has-error' : '' }}">
+                                    <label class="text-dark">Name</label>
+                                    <input type="text" class="form-control" name="name" required>
 
-                                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                                     <label class="text-dark">Email</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                    <input type="email" class="form-control" name="email" required>
+
+                                    <label class="text-dark">Message</label>
+                                    <textarea class="form-control" name="msg" cols="30" rows="5" style="resize: vertical" required></textarea>
                                 </div>
 
-                                <button type="submit" class="btn btn-warning btn-fill btn-block">Send Link</button>
+                                <button type="submit" class="btn btn-info btn-fill btn-block">Send</button>
                             </form>
+                            <br>
                         </div>
                     </div>
                 </div>

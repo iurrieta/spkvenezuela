@@ -15,17 +15,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">SPK Venezuela</a>
+                <a href="/">
+                    <img src="{{ asset('img/logo04.png') }}" alt="logo" style="height: 65px">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navigation-example-2">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{{ url('/login') }}" class="btn btn-simple">@lang('app.login')</a>
+                        <a style="color: white" href="{{ url('/login') }}" class="btn btn-simple">@lang('app.login')</a>
                     </li>
                     <li>
-                        <a href="{{ url('/register') }}" class="btn btn-simple">@lang('app.register')</a>
+                        <a style="color: white" href="{{ url('/register') }}" class="btn btn-simple">@lang('app.register')</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -33,10 +35,10 @@
     </nav>
 
     <div class="wrapper">
-        <div class="demo-header demo-header-image" style="background-image: url({{ asset('img/img02.jpg') }});">>
-            <div class="motto">
-                <h1 class="title-uppercase">SPK Venezuela</h1>
-                <h3>Slogan.</h3>
+        <div class="filter-black"></div>
+        <div class="demo-header demo-header-image" style="background-image: url({{ asset('img/img01.jpeg') }});">
+            <div align="center" style="padding-top: 180px">
+                <img style="height: 300px" src="{{ asset('img/logo04.png') }}" alt="">
             </div>
         </div>
 

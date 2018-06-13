@@ -38,7 +38,9 @@
                                 <span class="icon-bar bar2"></span>
                                 <span class="icon-bar bar3"></span>
                             </button>
-                            <a class="navbar-brand" href="{{ url('/') }}">SPK Venezuela</a>
+                            <a href="{{ url('/') }}">
+                                <img src="{{ asset('img/logo04.png') }}" alt="logo" style="height: 65px">
+                            </a>
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav navbar-right">

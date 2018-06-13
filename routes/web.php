@@ -55,6 +55,12 @@ Route::post('teacher/comment', 'CommentsController@store')->name('comment');
 // add rate
 Route::post('teacher/rate', 'RatesController@store')->name('rate');
 
+// View to send email
+Route::get('becomeTeacher', 'HomeController@becomeTeacher')->name('becomeTeacher');
+
+// Send email to become a teacher
+Route::post('becomeTeacherSendMail', 'HomeController@becomeTeacherSendMail')->name('becomeTeacherSendMail');
+
 // get images
 Route::get("photo_profile/{filename}", function($filename) {
     $path = storage_path("app/avatars/$filename");

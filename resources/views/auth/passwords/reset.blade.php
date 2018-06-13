@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('title')
-    SPK Venezuela | Cambiar Contraseña
+    SPK Venezuela | Reset Password
 @endsection
 
 @section('content')
@@ -15,7 +15,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">SPK Venezuela</a>
+                <a href="/">
+                    <img src="{{ asset('img/logo04.png') }}" alt="logo" style="height: 65px">
+                </a>
             </div>
         </div><!-- /.container-->
     </nav>

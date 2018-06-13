@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('title')
-    SPK Venezuela | Ingresar
+    SPK Venezuela | Login
 @endsection
 
 @section('content')
@@ -15,7 +15,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">SPK Venezuela</a>
+                <a href="/">
+                    <img src="{{ asset('img/logo04.png') }}" alt="logo" style="height: 65px">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,7 +32,7 @@
     </nav>
 
     <div class="wrapper">
-        <div class="register-background" style="background-image: url({{ asset('img/img05.jpg') }})">
+        <div class="register-background" style="background-image: url({{ asset('img/img02.jpg') }})">
             <div class="filter-black"></div>
             <div class="container">
                 <div class="row">

@@ -9,16 +9,31 @@ class ResetPassword extends Notification
 {
     public $token;
     
+    /**
+     * ResetPassword constructor.
+     *
+     * @param $token
+     */
     public function __construct($token)
     {
         $this->token = $token;
     }
     
+    /**
+     * @param $notifiable
+     *
+     * @return array
+     */
     public function via($notifiable)
     {
         return ['mail'];
     }
     
+    /**
+     * @param $notifiable
+     *
+     * @return MailMessage
+     */
     public function toMail($notifiable)
     {
         return (new MailMessage)
