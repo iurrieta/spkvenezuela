@@ -7,6 +7,10 @@
 @section('content')
     <div class="card">
         <div class="content">
+            <div align="center">
+                <a href="{{ route('user.create') }}" class="btn btn-danger"><i class="fa fa-plus"></i> New User</a>
+            </div>
+            <hr>
             <table class="table table-responsive table-hover">
                 <thead>
                 <th>Name</th>

@@ -25,14 +25,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// all users
-Route::get('user/all', 'UsersController@index')->name('users')->middleware('admin');
+Route::group(['middleware' => ['admin']], function () {
+    // all users
+    Route::get('user/all', 'UsersController@index')->name('users');
+    
+    // create user
+    Route::get('user/create', 'UsersController@create')->name('user.create');
+    
+    // user detail
+    Route::post('user/store', 'UsersController@store')->name('user.store');
 
-// user detail
-Route::get('user/{id}/detail', 'UsersController@show')->name('user')->middleware('admin');
+    // user detail
+    Route::get('user/{id}/detail', 'UsersController@show')->name('user');
 
-// activate/deactivate users
-Route::post('user/{id}/changeStatus', 'UsersController@changeStatus')->name('changeStatus')->middleware('admin');
+    // activate/deactivate users
+    Route::post('user/{id}/changeStatus', 'UsersController@changeStatus')->name('changeStatus');
+});
 
 // user profile
 Route::get('profile/{id}', 'UsersController@show')->name('profile');

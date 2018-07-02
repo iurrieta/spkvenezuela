@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Webpatser\Uuid\Uuid;
 
 class UsersController extends Controller
 {
@@ -28,6 +29,57 @@ class UsersController extends Controller
         $users = User::paginate(10);
         
         return view('users.index', compact('users'));
+    }
+    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('users.create');
+    }
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // validation
+        $this->validate($request, [
+            'name' => 'required|unique:users',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|confirmed|min:4'
+        ]);
+        
+        // new user
+        $user       = new User();
+        $user->id   = Uuid::generate();
+        $user->type = 'TEACHER';
+        $user->fill($request->all());
+        
+        if ($user->save())
+        {
+            $request->session()->flash('message', [
+                'alert' => 'success',
+                'text'  => 'User saved'
+            ]);
+            
+            return redirect()->route('users');
+        }
+        else
+        {
+            $request->session()->flash('message', [
+                'alert' => 'error',
+                'text'  => 'Error to save'
+            ]);
+            
+            return redirect()->route('user.create');
+        }
     }
 
     /**

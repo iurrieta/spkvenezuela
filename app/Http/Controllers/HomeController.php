@@ -49,6 +49,13 @@ class HomeController extends Controller
         return view('teacher');
     }
     
+    /**
+     * Send email to become a teacher
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function becomeTeacherSendMail(Request $request)
     {
         $name = $request->name;
