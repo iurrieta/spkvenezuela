@@ -47,8 +47,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h2>Let's talk product</h2>
-                            <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad architecto atque consectetur delectus fugiat in incidunt ipsa iste labore, minima nulla odio quibusdam ratione reiciendis soluta tempore? Quam, voluptas.</h5>
+                            <h3>Learn Spanish with SPK Venezuela</h2>
+                            <h5>We are a group of qualified teachers who are ready to walk with you in this journey of learning.</h5>
                         </div>
                     </div>
                 </div>
@@ -56,18 +56,18 @@
 
             <div class="section section-light-brown landing-section" style="color: #555">
                 <div class="container">
-                    <div class="row">
+                    <div class="row" align="center">
                         <div class="col-md-4 column">
-                            <h4>First Attribute</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <h3><i class="fa fa-calendar"></i></h3>
+                            <p>Make your lessons when and wherever you want.</p>
                         </div>
                         <div class="col-md-4 column">
-                            <h4>Second Attribute</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <h3><i class="fa fa-group"></i></h3>
+                            <p>Choose among the teachers and receive individual lessons according to your objectives and interests.</p>
                         </div>
-                        <div class="col-md-4 column">
-                            <h4>Third Attribute</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                        <div class="col-md-4 column">   
+                            <h3><i class="fa fa-bolt"></i></h3>                         
+                            <p>Speak Spanish fluently. Unleash your potencial.</p>
                         </div>
                     </div>
                 </div>
